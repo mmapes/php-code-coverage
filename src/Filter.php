@@ -128,7 +128,7 @@ class Filter
 
         $filename = realpath($filename);
 
-        return !isset($this->whitelistedFiles[$filename]);
+        return $this->hasWhitelist() && !isset($this->whitelistedFiles[$filename]);
     }
 
     /**
